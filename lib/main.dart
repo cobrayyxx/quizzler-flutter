@@ -31,6 +31,7 @@ class _QuizPageState extends State<QuizPage> {
     'Approximately one quarter of human bones are in the feet.',
     'A slug\'s blood is green.'
   ];
+  List<bool> answers = [false, true, true];
   int numQuestion = 0;
 
   @override
@@ -70,6 +71,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                bool correctAnswer = answers[numQuestion];
+                if (correctAnswer == true) {
+                  print('User got it right');
+                } else {
+                  print('User got it wrong');
+                }
                 setState(() {
                   numQuestion++;
                 });
@@ -91,6 +98,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                bool correctAnswer = answers[numQuestion];
+                if (correctAnswer == false) {
+                  print('User got it right');
+                } else {
+                  print('User got it wrong');
+                }
                 setState(() {
                   numQuestion++;
                 });
@@ -109,6 +122,7 @@ class _QuizPageState extends State<QuizPage> {
 
 /*
 question1: 'You can lead a cow down stairs but not up stairs.', false,
-question2: 'Approximately one quarter of human bones are in the feet.', true,
+question2: 'Approximately one quarter of human bones ar
+e in the feet.', true,
 question3: 'A slug\'s blood is green.', true,
 */
